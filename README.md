@@ -24,4 +24,6 @@ Also pushes use to a Razmashat's File Manager
 - Razmashat
 <br>File Manager
 
-*TESTED on iPhone XS Max iOS 12.1.2 (ver 2)
+*TESTED on 
+<br>-iPhone XS Max iOS 12.1.2 (ver 2) 
+<br>-iPad6,3 iOS 12.1 (iPad Pro 9.7")
