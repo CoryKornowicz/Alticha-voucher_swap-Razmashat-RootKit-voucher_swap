@@ -49,7 +49,6 @@
 
 - (IBAction)go:(id)sender {
     
-//    [_outPutWindow setText: @"\n\n---\nStarting Exploiting... using voucher_swap method."];
     [_runButton setEnabled:NO];
     
     Post *post = [[Post alloc] init];
@@ -87,9 +86,11 @@
         return;
     }
     // Do any additional setup after loading the view, typically from a nib.
+    
 //    if (offsets_init() != 0) {
 //        _outPutWindow.text = @"Offsets init may be failed.\n";
 //    }
+    
     struct utsname u = {};
     uname(&u);
     //    struct    utsname {
@@ -101,6 +102,7 @@
     //    };
     NSString *deviceInfo = [[NSString alloc] initWithFormat:@"\n          %s\n          %s  %s", u.version, u.nodename, u.machine];
     _outPutWindow.text = [[_outPutWindow text] stringByAppendingString: deviceInfo];
+    
     setUserLandHome([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,    NSUserDomainMask, YES)objectAtIndex:0]);
     //    [NSFileManager defaultManager]
 }
@@ -298,14 +300,14 @@
         NSLog(@"Creating file as:%@",namefield.text);
         NSError *err;
         NSString *fullPath;
-        if ([currentPath isEqualToString:@"/"]) {
+        if ([self->currentPath isEqualToString:@"/"]) {
             fullPath = [[NSString alloc] initWithFormat:@"%@%@", self->currentPath, namefield.text];
         }else{
             fullPath = [[NSString alloc] initWithFormat:@"%@/%@", self->currentPath, namefield.text];
         }
         [[NSFileManager defaultManager] createDirectoryAtPath:fullPath withIntermediateDirectories:NO attributes:nil error:&err];
         if (err != nil) {
-            NSLog(err);
+            NSLog(@"%@", err);
             self->_errorLabel.text = @"Failed to create folder.";
         }
         self->currentFileList = catchContentUnderPath(self->currentPath);
