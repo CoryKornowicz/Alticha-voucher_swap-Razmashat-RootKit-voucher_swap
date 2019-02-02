@@ -100,7 +100,7 @@
     //        char    version[_SYS_NAMELEN];    /* [XSI] Version level */
     //        char    machine[_SYS_NAMELEN];    /* [XSI] Hardware type */
     //    };
-    NSString *deviceInfo = [[NSString alloc] initWithFormat:@"\n          %s\n          %s  %s", u.version, u.nodename, u.machine];
+    NSString *deviceInfo = [[NSString alloc] initWithFormat:@"\n\n%s\n\n%s -- %s", u.version, u.nodename, u.machine];
     _outPutWindow.text = [[_outPutWindow text] stringByAppendingString: deviceInfo];
     
     setUserLandHome([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,    NSUserDomainMask, YES)objectAtIndex:0]);
