@@ -1,3 +1,5 @@
+# A rewritten version in Swfit is currently in the works. I will update this page when it is finished.(02/03/19)
+
 # Alticha-voucher_swap-Razmashat-RootKit-voucher_swap
 This combines Alticha-voucher_swap + Razmashat-RootKit-voucher_swap to get a FileManager on A12
 
